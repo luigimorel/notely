@@ -1,7 +1,6 @@
 const { gql } = require( 'apollo-server-express' );
 
-
-const typeDefs = gql`
+module.exports = gql` scaler DateTime 
 	type Note {
 		id: ID!
 		content: String!
@@ -38,4 +37,3 @@ const typeDefs = gql`
 `;
 
 
-module.exports = gql` scaler DateTime `
