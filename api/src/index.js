@@ -9,7 +9,7 @@ const resolvers = require('./resolvers')
 const jwt = require('jsonwebtoken')
 
 
-const DB_HOST process.env.DB_HOST;
+const DB_HOST = process.env.DB_HOST;
 
 
 // Apollo server set up

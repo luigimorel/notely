@@ -1,8 +1,7 @@
 const mongoose = require('mongoose')
 
 module.exports = {
-	DB_HOST 
-	=>{
+	connect: DB_HOST =>{
 		// Use the mongo driver updated URL  string parser 
 		mongo.set('useNewUrlParser', true); 
 		// use findOneAndUpdate() in place of findAndModify()

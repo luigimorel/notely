@@ -12,7 +12,7 @@ module.exports = {
 	//Find all the users
 	users: async (parent, args, {models}) =>{
 		return await models.User.find({})
-	} 
+	} ,
 	me: async(parent, args, {models, user}) =>{
 		// Find a user given the current user context 
 		return await models.User.findById(user.id)
