@@ -1,5 +1,4 @@
 const express = require("express");
-const app = express();
 const { ApolloServer, gql } = require("apollo-server-express");
 require("dotenv").config();
 const db = require("db");
@@ -7,7 +6,12 @@ const models = require('./models')
 const typeDefs = require('./schema')
 const resolvers = require('./resolvers')
 const jwt = require('jsonwebtoken')
+const helmet = require( 'helmet' ) 
+const cors = require('cors')
 
+const app = express();
+
+app.use(helmet)
 
 const DB_HOST = process.env.DB_HOST;
 
