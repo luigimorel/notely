@@ -21,14 +21,14 @@ const server = new ApolloServer({
 		const token = req.headers.authorization; 
 
 		// Try to receive the token from the headers
-		getUser(token);
+	const user = 	getUser(token);
 
 		// Log out the user
 		console.log(user)
 		
 		// Add the db models to the db 
 		return {
-			models
+			models, user
 		}
 	}
 });
