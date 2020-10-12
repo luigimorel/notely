@@ -1,4 +1,6 @@
-const express = require("express");
+const depthLimit = require( "graphql-depth-limit" )
+const { createComplexityLimitRule } = require( 'graphql-validation-complexity' ); 
+const express = require( "express" );
 const { ApolloServer, gql } = require("apollo-server-express");
 require("dotenv").config();
 const db = require("db");
@@ -20,12 +22,14 @@ const DB_HOST = process.env.DB_HOST;
 const server = new ApolloServer({
 	typeDefs,
 	resolvers,
+	validationRules:
+		[ depthLimit( 5 ), createComplexityLimitRule( 5 ) ], 
 	context: ({req} ) =>{
 		// Get the user token from the headers
 		const token = req.headers.authorization; 
 
 		// Try to receive the token from the headers
-	const user = 	getUser(token);
+	const user = 	await getUser(token);
 
 		// Log out the user
 		console.log(user)
