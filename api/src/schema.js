@@ -18,6 +18,11 @@ module.exports = gql` scaler DateTime
 		notes: [Note!]!
 		favourites: [Note!]!
 	}
+	type NoteFeed {
+		notes: [Note!]!
+		cursor: String
+		hasNextPage: Boolean!
+	}
 	type Query {
 		hello: String
 		notes: [Note!]!
@@ -25,6 +30,7 @@ module.exports = gql` scaler DateTime
 		user(username:String!): User
 		users: [User!]!
 		me: User!
+		noteFeed(cursor: String): NoteFeed
 	}
 	type Mutation {
 		newNote(content: String!): Note!

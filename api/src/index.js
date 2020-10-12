@@ -11,7 +11,7 @@ const cors = require('cors')
 
 const app = express();
 
-app.use(helmet)
+app.use( helmet );
 
 const DB_HOST = process.env.DB_HOST;
 
