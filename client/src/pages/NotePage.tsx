@@ -37,6 +37,6 @@ if(error)return <p>Error: Not found </p>
 
 
     return (
-        <Note note={data.note}>)
+        <Note note={data.note}/>)
 }
 }

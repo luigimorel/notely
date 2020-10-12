@@ -169,3 +169,21 @@ label, input{
     line-height: 2em;
 }
 `
+
+// HeaderBar
+export const UserState = styled.div`
+margin-left: auto;
+`
+export const ButtonAsLink = styled.button`
+background: none;
+    color:#0077cc;
+    border: none;
+    padding: 0; 
+    font: inherit;
+    text-decoration: underline;
+    cursor: pointer;
+
+    :hover, :active{
+color: #004499;
+    }
+`

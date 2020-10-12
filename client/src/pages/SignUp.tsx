@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useMutation, useApolloClient, gql } from '@apollo/client'
-
 import { SignUpWrapper, Form } from '../styles';
+
 
 
 interface SignUpProps {
@@ -23,14 +23,28 @@ mutation signUp($email:String! , $username: String!, $password:String!){
     signUp(email: $email, username: $username, password: $password)
 }
     `
+// Create the Apollo client 
+    const client = new useApolloClient({
+        link: authLink.concat(httpLink), cache, resolvers: {}, connectDevTools: true
+    })
 
+    const data = {
+        isLoggedIn: !!localStorage.getItem('token')
+    }
+    // Write the cache data on initial load 
+    caches.writeData({data})
     const [signUp, { loading, error }] = useMutation(SIGNUP_USER, {
         onCompleted: data => {
             localStorage.setItem('token', data.signUp);
+            // Update the local cache 
+            client.writeData({
+                data:{ isLoggedIn: true}
+            })
             // Redirect the user to the home page 
             props.history.push('/');
         }
-    })
+    });
+
     return (
         <SignUpWrapper>
             <Form onSubmit={event => {

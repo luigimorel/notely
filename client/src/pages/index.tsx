@@ -6,6 +6,7 @@ import { Favourites } from './favorites'
 import { Layout } from './../components/Layout'
 import { Note } from '../components/Note'
 import { SignUp } from './SignUp'
+import {SignIn } from './SiginIn'
 
 
 export const Pages = () => {
@@ -16,6 +17,7 @@ export const Pages = () => {
             <Route exact path="/favourites" component={Favourites} />
             <Route path='/signup' component={SignUp} />
             <Route path="/note/:id" component={Note} />
+            <Route path='/signin' component={SignIn}/>
         </Layout>
     </Router>
 }
