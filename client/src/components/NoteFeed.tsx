@@ -1,6 +1,7 @@
 import React from 'react'
 import { Note } from './Note'
 import {NoteWrapper} from '../styles'
+import {Link } from 'react-router-dom'
 
 interface NoteFeedProps {
     notes: any
@@ -8,8 +9,10 @@ interface NoteFeedProps {
 }
 export const NoteFeed = ({notes}:NoteFeedProps) => {
     return <div>
-        {notes.map(note => (<NoteWrapper key={note.id}>
+        {notes.map(note => (
+        <NoteWrapper key={note.id}>
             <Note note={note}/>
+            <Link to={`note/${note.id}`}>Permalink</Link>
         </NoteWrapper>
         ))}
     </div>

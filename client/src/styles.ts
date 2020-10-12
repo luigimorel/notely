@@ -55,7 +55,7 @@ position: relative;
 height: calc(100% - 64px); 
 width: 100%;
 flex: auto; 
-flex-direction: column;
+flex-direction: column;]
 }
 `
 
@@ -152,4 +152,20 @@ export const NoteWrapper = styled.div`
     margin: 0 auto;
     margin-bottom: 2em;
     padding-bottom: 1px solid #f5f4f0; 
+`
+// Sign up 
+export const SignUpWrapper = styled.div`
+    border: 1px solid #f5f4f0; 
+    max-width: 500px; 
+    padding: 1em ; 
+    margin: 0 auto;
+`
+
+export const Form = styled.form`
+label, input{
+    width: 100%; 
+    margin-bottom: 1em; 
+    display: block;
+    line-height: 2em;
+}
 `
