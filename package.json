@@ -1,0 +1,17 @@
+{
+  "name": "notely",
+  "version": "1.0.0",
+  "description": "",
+  "main": "api/src/index.js",
+  "scripts": {
+  "start": "node --prefix api",
+  "server": "nodemon --prefix api",
+  "client": "npm start --prefix client",
+  "dev": "concurrently \" npm run server\" \"npm run client\""  },
+  "keywords": [],
+  "author": "Luigi Morel <morelmiles@gmail.com> (https://morelmiles.github.io/)",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^5.1.0"
+  }
+}

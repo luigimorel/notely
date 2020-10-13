@@ -19,7 +19,7 @@ query note($id: ID!){
 	}
 }
 `
-export const NotePage = (props) => {
+export const NotePage = (props: any) => {
 //Store the id found in the url 
 //query hook, passing the id as a variable 
 
@@ -38,5 +38,4 @@ if(error)return <p>Error: Not found </p>
 
     return (
         <Note note={data.note}/>)
-}
 }

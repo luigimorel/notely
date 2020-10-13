@@ -169,6 +169,18 @@ label, input{
     line-height: 2em;
 }
 `
+export const FormWrapper = styled.form`
+ label,
+  input {
+    display: block;
+    line-height: 2em;
+  }
+
+  input {
+    width: 100%;
+    margin-bottom: 1em;
+  }
+`
 
 // HeaderBar
 export const UserState = styled.div`

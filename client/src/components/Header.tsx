@@ -10,8 +10,8 @@ const IS_LOGGED_IN = gql`{
     isLoggedIn @client
 }`
 
-const Header = (props) => {
-    const { data } = useQuery(IS_LOGGED_IN);
+const Header = (props:any) => {
+    const { data, client } = useQuery(IS_LOGGED_IN);
 
     return (
         <HeaderBar>
@@ -23,16 +23,11 @@ const Header = (props) => {
 
                 {data.isLoggedIn ? (<ButtonAsLink onClick={() => {
                     // Remove the token 
-                    localStorage
-                        .removeItem('token'); 
+                    localStorage.removeItem('token'); 
                     // Clear the application's cache
-                    clientInformation.resetStore();
+                    client.resetStore();
                     // Update the local state
-                    client.writeData({
-                        data: {
-                            isLoggedIn: false
-                        }
-                    })
+                    client.writeData({   data: {isLoggedIn: false }})
                     // Redirect the user to the home page 
                     props.history.push('/')
                 }}

@@ -12,7 +12,7 @@ export const NoteFeed = ({notes}:NoteFeedProps) => {
         {notes.map(note => (
         <NoteWrapper key={note.id}>
             <Note note={note}/>
-            <Link to={`note/${note.id}`}>Permalink</Link>
+            <Link to={`note/${note.id}`}>Link</Link>
         </NoteWrapper>
         ))}
     </div>
